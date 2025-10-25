@@ -90,7 +90,7 @@ body {
 /* Hero Section */
 .hero {
     background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
-                url('https://images.unsplash.com/photo-1445205170230-053b83016050?ixlib=rb-4.0.3&auto=format&fit=crop&w=2071&q=80');
+                url('Image_resources/IMG_7109.jpeg');
     background-size: cover;
     background-position: center;
     height: 80vh;
