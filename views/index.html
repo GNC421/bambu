@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vintage Charm - Ropa de Segunda Mano con Estilo</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="#" class="nav-logo">Vintage Charm</a>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="#inicio" class="nav-link">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#categorias" class="nav-link">Categorías</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#filosofia" class="nav-link">Nuestra Filosofía</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#como-funciona" class="nav-link">Cómo Funciona</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contacto" class="nav-link">Contacto</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>Moda con Historia, Estilo con Conciencia</h1>
+            <p>Descubre prendas únicas de segunda mano, de calidad y a un precio increíble</p>
+            <a href="#productos" class="cta-button">Explora Nuestras Prendas</a>
+        </div>
+    </section>
+
+    <!-- Categorías -->
+    <section id="categorias" class="categories">
+        <div class="container">
+            <h2>Categorías</h2>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <a href="categoria.html?cat=vestidos">
+                        <i class="fas fa-tshirt"></i>
+                        <h3>Vestidos</h3>
+                    </a>
+                </div>
+                <div class="category-card">
+                    <a href="categoria.html?cat=camisas">
+                        <i class="fas fa-tshirt"></i>
+                        <h3>Camisas/Blusas</h3>
+                    </a>
+                </div>
+                <div class="category-card">
+                    <a href="categoria.html?cat=pantalones">
+                        <i class="fas fa-tshirt"></i>
+                        <h3>Pantalones/Jeans</h3>
+                    </a>
+                </div>
+                <div class="category-card">
+                    <a href="categoria.html?cat=abrigos">
+                        <i class="fas fa-tshirt"></i>
+                        <h3>Abrigos/Chaquetas</h3>
+                    </a>
+                </div>
+                <div class="category-card">
+                    <a href="categoria.html?cat=accesorios">
+                        <i class="fas fa-tshirt"></i>
+                        <h3>Accesorios</h3>
+                    </a>
+                </div>
+                <div class="category-card">
+                    <a href="categoria.html?cat=calzado">
+                        <i class="fas fa-tshirt"></i>
+                        <h3>Calzado</h3>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Productos -->
+    <section id="productos" class="products">
+        <div class="container">
+            <h2>Novedades</h2>
+            <div class="products-grid">
+                <!-- Producto 1 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Vestido floral años 70">
+                    </div>
+                    <div class="product-info">
+                        <h3>Vestido floral años 70</h3>
+                        <p class="product-price">€25,00</p>
+                        <button class="reserve-btn" onclick="reserveProduct('Vestido floral años 70')">
+                            <i class="fas fa-shopping-bag"></i> Reservar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Producto 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1529903384028-929ae5dccdf1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=686&q=80" alt="Chaqueta de mezclilla vintage">
+                    </div>
+                    <div class="product-info">
+                        <h3>Chaqueta de mezclilla vintage</h3>
+                        <p class="product-price">€35,00</p>
+                        <button class="reserve-btn" onclick="reserveProduct('Chaqueta de mezclilla vintage')">
+                            <i class="fas fa-shopping-bag"></i> Reservar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Producto 3 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=735&q=80" alt="Blusa de seda estampada">
+                    </div>
+                    <div class="product-info">
+                        <h3>Blusa de seda estampada</h3>
+                        <p class="product-price">€18,00</p>
+                        <button class="reserve-btn" onclick="reserveProduct('Blusa de seda estampada')">
+                            <i class="fas fa-shopping-bag"></i> Reservar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Producto 4 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1543087903-1ac2ec7aa8c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=689&q=80" alt="Falda plisada vintage">
+                    </div>
+                    <div class="product-info">
+                        <h3>Falda plisada vintage</h3>
+                        <p class="product-price">€22,00</p>
+                        <button class="reserve-btn" onclick="reserveProduct('Falda plisada vintage')">
+                            <i class="fas fa-shopping-bag"></i> Reservar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filosofía -->
+    <section id="filosofia" class="philosophy">
+        <div class="container">
+            <h2>¿Por qué Comprar Vintage?</h2>
+            <div class="philosophy-grid">
+                <div class="philosophy-item">
+                    <i class="fas fa-leaf"></i>
+                    <h3>Sostenibilidad</h3>
+                    <p>Alargamos la vida de la ropa, reduciendo residuos y el impacto ambiental.</p>
+                </div>
+                <div class="philosophy-item">
+                    <i class="fas fa-award"></i>
+                    <h3>Calidad</h3>
+                    <p>Prendas bien hechas, con materiales duraderos que trascienden el tiempo.</p>
+                </div>
+                <div class="philosophy-item">
+                    <i class="fas fa-star"></i>
+                    <h3>Unicidad</h3>
+                    <p>Encuentra piezas únicas que reflejan tu personalidad y que nadie más tendrá.</p>
+                </div>
+                <div class="philosophy-item">
+                    <i class="fas fa-clock"></i>
+                    <h3>Estilo Atemporal</h3>
+                    <p>Moda que trasciende las tendencias pasajeras, siempre en estilo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cómo Funciona -->
+    <section id="como-funciona" class="how-it-works">
+        <div class="container">
+            <h2>¿Cómo Funciona?</h2>
+            <div class="steps-grid">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Elige tu prenda favorita</h3>
+                    <p>Navega por nuestra colección y encuentra esa pieza especial que buscas.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Reserva y contacta</h3>
+                    <p>Pulsa el botón "Reservar" y envíanos un mensaje con tus datos.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Recoge tu pedido</h3>
+                    <p>Te contactamos para acordar el pago y la entrega de tu nueva prenda.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contacto" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Vintage Charm</h3>
+                    <p>Moda sostenible con historia y estilo</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p><i class="fas fa-envelope"></i> hola@vintagecharm.com</p>
+                    <p><i class="fas fa-phone"></i> +34 123 456 789</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Síguenos</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Vintage Charm. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../scripts/script.js"></script>
+</body>
+</html>

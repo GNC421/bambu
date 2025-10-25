@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categoría - Vintage Charm</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../styles/categoria.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="index.html" class="nav-logo">Vintage Charm</a>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#categorias" class="nav-link">Categorías</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#filosofia" class="nav-link">Nuestra Filosofía</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#como-funciona" class="nav-link">Cómo Funciona</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#contacto" class="nav-link">Contacto</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Inicio</a>
+            <span>/</span>
+            <a href="index.html#categorias">Categorías</a>
+            <span>/</span>
+            <span class="current-category">Vestidos</span>
+        </div>
+    </section>
+
+    <!-- Header de Categoría -->
+    <section class="category-header">
+        <div class="container">
+            <h1 id="category-title">Vestidos</h1>
+            <p id="product-count" class="product-count">12 productos encontrados</p>
+        </div>
+    </section>
+
+    <!-- Contenido Principal -->
+    <main class="category-main">
+        <div class="container">
+            <div class="category-layout">
+                <!-- Sidebar de Filtros -->
+                <aside class="filters-sidebar">
+                    <div class="filters-header">
+                        <h3>Filtros</h3>
+                        <button class="clear-filters" id="clear-filters">Limpiar</button>
+                    </div>
+
+                    <!-- Filtro Categorías -->
+                    <div class="filter-group">
+                        <h4>Categorías</h4>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" name="category" value="vestidos">
+                                <span class="checkmark"></span>
+                                Vestidos
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="category" value="camisas">
+                                <span class="checkmark"></span>
+                                Camisas/Blusas
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="category" value="pantalones">
+                                <span class="checkmark"></span>
+                                Pantalones/Jeans
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="category" value="abrigos">
+                                <span class="checkmark"></span>
+                                Abrigos/Chaquetas
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="category" value="accesorios">
+                                <span class="checkmark"></span>
+                                Accesorios
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="category" value="calzado">
+                                <span class="checkmark"></span>
+                                Calzado
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Filtro Marcas -->
+                    <div class="filter-group">
+                        <h4>Marcas</h4>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" name="brand" value="levis">
+                                <span class="checkmark"></span>
+                                Levi's
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="brand" value="zara">
+                                <span class="checkmark"></span>
+                                Zara
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="brand" value="h&m">
+                                <span class="checkmark"></span>
+                                H&M
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="brand" value="mango">
+                                <span class="checkmark"></span>
+                                Mango
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="brand" value="otras">
+                                <span class="checkmark"></span>
+                                Otras marcas
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Filtro Tallas -->
+                    <div class="filter-group">
+                        <h4>Tallas</h4>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" name="size" value="xs">
+                                <span class="checkmark"></span>
+                                XS
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="size" value="s">
+                                <span class="checkmark"></span>
+                                S
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="size" value="m">
+                                <span class="checkmark"></span>
+                                M
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="size" value="l">
+                                <span class="checkmark"></span>
+                                L
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="size" value="xl">
+                                <span class="checkmark"></span>
+                                XL
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Filtro Precio -->
+                    <div class="filter-group">
+                        <h4>Precio</h4>
+                        <div class="price-filter">
+                            <div class="price-inputs">
+                                <input type="number" id="min-price" placeholder="Mín" min="0" max="100">
+                                <span>-</span>
+                                <input type="number" id="max-price" placeholder="Máx" min="0" max="100">
+                            </div>
+                            <div class="price-quick-filters">
+                                <button class="price-quick-btn" data-min="0" data-max="20">< €20</button>
+                                <button class="price-quick-btn" data-min="20" data-max="40">€20-€40</button>
+                                <button class="price-quick-btn" data-min="40" data-max="60">€40-€60</button>
+                                <button class="price-quick-btn" data-min="60" data-max="100">> €60</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Filtro Color -->
+                    <div class="filter-group">
+                        <h4>Color</h4>
+                        <div class="color-filters">
+                            <label class="color-option">
+                                <input type="checkbox" name="color" value="negro">
+                                <span class="color-swatch" style="background-color: #000;"></span>
+                                Negro
+                            </label>
+                            <label class="color-option">
+                                <input type="checkbox" name="color" value="blanco">
+                                <span class="color-swatch" style="background-color: #fff; border: 1px solid #ddd;"></span>
+                                Blanco
+                            </label>
+                            <label class="color-option">
+                                <input type="checkbox" name="color" value="rojo">
+                                <span class="color-swatch" style="background-color: #ff0000;"></span>
+                                Rojo
+                            </label>
+                            <label class="color-option">
+                                <input type="checkbox" name="color" value="azul">
+                                <span class="color-swatch" style="background-color: #0000ff;"></span>
+                                Azul
+                            </label>
+                            <label class="color-option">
+                                <input type="checkbox" name="color" value="verde">
+                                <span class="color-swatch" style="background-color: #008000;"></span>
+                                Verde
+                            </label>
+                            <label class="color-option">
+                                <input type="checkbox" name="color" value="rosa">
+                                <span class="color-swatch" style="background-color: #ffc0cb;"></span>
+                                Rosa
+                            </label>
+                            <label class="color-option">
+                                <input type="checkbox" name="color" value="estampado">
+                                <span class="color-swatch" style="background: linear-gradient(45deg, #ff0000, #0000ff, #00ff00);"></span>
+                                Estampado
+                            </label>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Contenido Principal -->
+                <div class="products-content">
+                    <!-- Barra de Herramientas -->
+                    <div class="products-toolbar">
+                        <div class="toolbar-left">
+                            <span id="showing-count">Mostrando 12 de 45 productos</span>
+                        </div>
+                        <div class="toolbar-right">
+                            <select id="sort-select" class="sort-select">
+                                <option value="relevance">Más relevantes</option>
+                                <option value="price-asc">Precio: menor a mayor</option>
+                                <option value="price-desc">Precio: mayor a menor</option>
+                                <option value="newest">Más nuevos primero</option>
+                            </select>
+                            <div class="view-toggle">
+                                <button class="view-btn active" data-view="grid">
+                                    <i class="fas fa-th"></i>
+                                </button>
+                                <button class="view-btn" data-view="list">
+                                    <i class="fas fa-list"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Filtros Activos -->
+                    <div class="active-filters" id="active-filters">
+                        <!-- Los filtros activos aparecerán aquí -->
+                    </div>
+
+                    <!-- Grid de Productos -->
+                    <div class="products-grid" id="products-grid">
+                        <!-- Los productos se cargarán aquí dinámicamente -->
+                    </div>
+
+                    <!-- Paginación -->
+                    <div class="pagination">
+                        <button class="pagination-btn" disabled>Anterior</button>
+                        <span class="pagination-info">Página 1 de 3</span>
+                        <button class="pagination-btn">Siguiente</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contacto" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Vintage Charm</h3>
+                    <p>Moda sostenible con historia y estilo</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p><i class="fas fa-envelope"></i> hola@vintagecharm.com</p>
+                    <p><i class="fas fa-phone"></i> +34 123 456 789</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Síguenos</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Vintage Charm. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../scripts/script.js"></script>
+    <script src="../scripts/categoria.js"></script>
+</body>
+</html>
