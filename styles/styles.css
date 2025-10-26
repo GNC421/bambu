@@ -6,14 +6,16 @@
 }
 
 :root {
-    --primary-color: #8B4513;
-    --secondary-color: #D2B48C;
-    --accent-color: #556B2F;
+    --primary-color: #2d5a4a; /* Verde principal */
+    --secondary-color: #b89b7d; /* Marrón claro */
+    --accent-color: #4a7c6a; /* Verde secundario */
     --text-dark: #333;
     --text-light: #666;
-    --background-light: #f9f5f0;
+    --background-light: #f5f0e8; /* Beige claro */
     --white: #ffffff;
     --shadow: 0 2px 10px rgba(0,0,0,0.1);
+    --light-green: #e8f2e9;
+    --light-brown: #f5f0e8;
 }
 
 body {
@@ -31,7 +33,7 @@ body {
 
 /* Header y Navegación */
 .navbar {
-    background: var(--white);
+    background: var(--primary-color); /* Verde principal */
     box-shadow: var(--shadow);
     position: fixed;
     width: 100%;
@@ -52,7 +54,7 @@ body {
 .nav-logo {
     font-size: 1.5rem;
     font-weight: bold;
-    color: var(--primary-color);
+    color: var(--white); /* Texto blanco sobre fondo verde */
     text-decoration: none;
 }
 
@@ -64,13 +66,13 @@ body {
 
 .nav-link {
     text-decoration: none;
-    color: var(--text-dark);
+    color: var(--white); /* Texto blanco sobre fondo verde */
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
 .nav-link:hover {
-    color: var(--primary-color);
+    color: var(--secondary-color); /* Marrón claro al hover */
 }
 
 .hamburger {
@@ -82,15 +84,15 @@ body {
 .bar {
     width: 25px;
     height: 3px;
-    background: var(--text-dark);
+    background: var(--white); /* Barras blancas sobre fondo verde */
     margin: 3px 0;
     transition: 0.3s;
 }
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
-                url('https://images.unsplash.com/photo-1445205170230-053b83016050?ixlib=rb-4.0.3&auto=format&fit=crop&w=2071&q=80');
+    background: linear-gradient(rgba(45, 90, 74, 0.7), rgba(139, 107, 76, 0.7)), 
+                url('https://images.unsplash.com/photo-1558769132-cb25f35d8c35?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80');
     background-size: cover;
     background-position: center;
     height: 80vh;
@@ -117,16 +119,18 @@ body {
 .cta-button {
     display: inline-block;
     padding: 12px 30px;
-    background: var(--primary-color);
+    background: var(--secondary-color); /* Marrón claro */
     color: var(--white);
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
-    transition: background 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .cta-button:hover {
-    background: var(--accent-color);
+    background: var(--accent-color); /* Verde secundario al hover */
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* Secciones comunes */
@@ -138,10 +142,14 @@ h2 {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 3rem;
-    color: var(--primary-color);
+    color: var(--primary-color); /* Verde principal */
 }
 
 /* Categorías */
+.categories {
+    background-color: var(--light-brown); /* Fondo marrón claro */
+}
+
 .categories-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -163,18 +171,18 @@ h2 {
 
 .category-card i {
     font-size: 2.5rem;
-    color: var(--primary-color);
+    color: var(--primary-color); /* Verde principal */
     margin-bottom: 1rem;
 }
 
 .category-card h3 {
-    color: var(--text-dark);
+    color: var(--primary-color); /* Verde principal */
     font-size: 1.1rem;
 }
 
 /* Productos */
 .products {
-    background: var(--white);
+    background: var(--light-green); /* Fondo verde claro */
 }
 
 .products-grid {
@@ -218,20 +226,20 @@ h2 {
 
 .product-info h3 {
     margin-bottom: 0.5rem;
-    color: var(--text-dark);
+    color: var(--primary-color); /* Verde principal */
 }
 
 .product-price {
     font-size: 1.2rem;
     font-weight: bold;
-    color: var(--primary-color);
+    color: var(--secondary-color); /* Marrón claro */
     margin-bottom: 1rem;
 }
 
 .reserve-btn {
     width: 100%;
     padding: 12px;
-    background: var(--primary-color);
+    background: var(--primary-color); /* Verde principal */
     color: var(--white);
     border: none;
     border-radius: 5px;
@@ -245,10 +253,14 @@ h2 {
 }
 
 .reserve-btn:hover {
-    background: var(--accent-color);
+    background: var(--accent-color); /* Verde secundario al hover */
 }
 
 /* Filosofía */
+.philosophy {
+    background-color: var(--light-brown); /* Fondo marrón claro */
+}
+
 .philosophy-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -262,18 +274,18 @@ h2 {
 
 .philosophy-item i {
     font-size: 3rem;
-    color: var(--primary-color);
+    color: var(--secondary-color); /* Marrón claro */
     margin-bottom: 1rem;
 }
 
 .philosophy-item h3 {
     margin-bottom: 1rem;
-    color: var(--text-dark);
+    color: var(--primary-color); /* Verde principal */
 }
 
 /* Cómo Funciona */
 .how-it-works {
-    background: var(--background-light);
+    background: var(--light-green); /* Fondo verde claro */
 }
 
 .steps-grid {
@@ -290,7 +302,7 @@ h2 {
 .step-number {
     width: 60px;
     height: 60px;
-    background: var(--primary-color);
+    background: var(--secondary-color); /* Marrón claro */
     color: var(--white);
     border-radius: 50%;
     display: flex;
@@ -303,12 +315,12 @@ h2 {
 
 .step h3 {
     margin-bottom: 1rem;
-    color: var(--text-dark);
+    color: var(--primary-color); /* Verde principal */
 }
 
 /* Footer */
 .footer {
-    background: var(--text-dark);
+    background: var(--primary-color); /* Verde principal */
     color: var(--white);
     padding: 50px 0 20px;
 }
@@ -323,7 +335,7 @@ h2 {
 .footer-section h3,
 .footer-section h4 {
     margin-bottom: 1rem;
-    color: var(--secondary-color);
+    color: var(--secondary-color); /* Marrón claro */
 }
 
 .footer-section p {
@@ -345,7 +357,7 @@ h2 {
 }
 
 .social-links a:hover {
-    color: var(--secondary-color);
+    color: var(--secondary-color); /* Marrón claro al hover */
 }
 
 .footer-bottom {
@@ -365,7 +377,7 @@ h2 {
         left: -100%;
         top: 70px;
         flex-direction: column;
-        background: var(--white);
+        background: var(--primary-color); /* Verde principal */
         width: 100%;
         text-align: center;
         transition: 0.3s;
