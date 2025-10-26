@@ -410,6 +410,7 @@
             justify-content: center;
             gap: 0.5rem;
             font-weight: 600;
+            text-decoration: none;
         }
 
         .reserve-btn:hover {
@@ -464,6 +465,7 @@
             position: relative;
             overflow: hidden;
             width: 100%;
+            margin-top: 2rem;
         }
 
         .carousel-container {
@@ -1054,9 +1056,9 @@
                     <div class="product-info">
                         <h3>Vestido Floral Años 70</h3>
                         <p class="product-price">€25,00</p>
-                        <button class="reserve-btn" onclick="reserveProduct('Vestido floral años 70')">
+                        <a href="https://wa.me/34667339317?text=¡Hola! Quiero reservar esta prenda: Vestido Floral Años 70 - https://bambuvintage.com/producto1" class="reserve-btn" target="_blank">
                             <i class="fas fa-shopping-bag"></i> Reservar
-                        </button>
+                        </a>
                     </div>
                 </div>
 
@@ -1068,9 +1070,9 @@
                     <div class="product-info">
                         <h3>Chaqueta Mezclilla Vintage</h3>
                         <p class="product-price">€35,00</p>
-                        <button class="reserve-btn" onclick="reserveProduct('Chaqueta de mezclilla vintage')">
+                        <a href="https://wa.me/34667339317?text=¡Hola! Quiero reservar esta prenda: Chaqueta Mezclilla Vintage - https://bambuvintage.com/producto2" class="reserve-btn" target="_blank">
                             <i class="fas fa-shopping-bag"></i> Reservar
-                        </button>
+                        </a>
                     </div>
                 </div>
 
@@ -1082,9 +1084,9 @@
                     <div class="product-info">
                         <h3>Blusa de Seda Estampada</h3>
                         <p class="product-price">€18,00</p>
-                        <button class="reserve-btn" onclick="reserveProduct('Blusa de seda estampada')">
+                        <a href="https://wa.me/34667339317?text=¡Hola! Quiero reservar esta prenda: Blusa de Seda Estampada - https://bambuvintage.com/producto3" class="reserve-btn" target="_blank">
                             <i class="fas fa-shopping-bag"></i> Reservar
-                        </button>
+                        </a>
                     </div>
                 </div>
 
@@ -1096,9 +1098,9 @@
                     <div class="product-info">
                         <h3>Falda Plisada Vintage</h3>
                         <p class="product-price">€22,00</p>
-                        <button class="reserve-btn" onclick="reserveProduct('Falda plisada vintage')">
+                        <a href="https://wa.me/34667339317?text=¡Hola! Quiero reservar esta prenda: Falda Plisada Vintage - https://bambuvintage.com/producto4" class="reserve-btn" target="_blank">
                             <i class="fas fa-shopping-bag"></i> Reservar
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -1288,11 +1290,6 @@
                 navbar.classList.remove("scrolled");
             }
         });
-
-        // Función para reservar productos
-        function reserveProduct(productName) {
-            alert(`¡Gracias por tu interés en ${productName}! Te contactaremos pronto para confirmar tu reserva.`);
-        }
 
         // Carrusel automático de hero
         let currentSlide = 0;
