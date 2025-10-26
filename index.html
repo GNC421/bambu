@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bambú Vintage - Ropa de Segunda Mano con Estilo</title>
+    <meta name="description" content="Descubre moda vintage única y sostenible en Bambú Vintage. Ropa de segunda mano con historia, estilo y conciencia ecológica.">
     <link rel="stylesheet" href="./styles/styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
@@ -12,13 +13,20 @@
     <header>
         <nav class="navbar">
             <div class="nav-container">
-                <a href="#" class="nav-logo">Bambú Vintage</a>
+                <a href="#" class="nav-logo">
+                    <img src="./styles/image_resources/logopandaverde.png"alt="Bambú Vintage" class="logo-img">
+                    <img src="./styles/image_resources/logoletra.png"alt="Vintage" class="logo-img">
+                    
+                </a>
                 <ul class="nav-menu">
                     <li class="nav-item">
                         <a href="#inicio" class="nav-link">Inicio</a>
                     </li>
                     <li class="nav-item">
                         <a href="#categorias" class="nav-link">Categorías</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#productos" class="nav-link">Productos</a>
                     </li>
                     <li class="nav-item">
                         <a href="#filosofia" class="nav-link">Nuestra Filosofía</a>
@@ -39,54 +47,101 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section con Carrusel -->
     <section id="inicio" class="hero">
+        <div class="hero-slideshow">
+            <!-- Slide 1 -->
+            <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1558769132-cb25f35d8c35?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80')"></div>
+            
+            <!-- Slide 2 -->
+            <div class="hero-slide" style="background-image: url('./styles/image_resources/fotosaray.png')"></div>
+            
+            <!-- Slide 3 -->
+            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1583394838336-acd977736f90?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1148&q=80')"></div>
+            
+            <!-- Slide 4 -->
+            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1287&q=80')"></div>
+        </div>
         <div class="hero-content">
-            <h1>Bambú Vintage: Moda con Historia, Estilo Sostenible</h1>
-            <p>Descubre prendas únicas de segunda mano que cuentan historias. Cada pieza es una oportunidad para vestir con conciencia y estilo, reduciendo tu huella ambiental mientras expresas tu personalidad única.</p>
-            <a href="#productos" class="cta-button">Explora Nuestras Prendas</a>
+            <h1 class="hero-title">BAMBÚ VINTAGE</h1>
+            <p class="hero-subtitle">Donde cada prenda cuenta una historia y tu estilo marca la diferencia. Descubre tesoros únicos de segunda mano que no solo visten tu cuerpo, sino que alimentan tu alma y cuidan nuestro planeta.</p>
+            <a href="#productos" class="cta-button">Explora Nuestros Tesoros</a>
         </div>
     </section>
 
     <!-- Categorías -->
     <section id="categorias" class="categories">
         <div class="container">
-            <h2>Explora Nuestras Categorías</h2>
+            <h2>Nuestras Categorías</h2>
             <div class="categories-grid">
                 <div class="category-card">
                     <a href="categoria.html?cat=vestidos">
-                        <i class="fas fa-tshirt"></i>
-                        <h3>Vestidos</h3>
+                        <div class="category-image">
+                            <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Vestidos vintage">
+                        </div>
+                        <div class="category-info">
+                            <h3>Vestidos</h3>
+                        </div>
                     </a>
                 </div>
                 <div class="category-card">
                     <a href="categoria.html?cat=camisas">
-                        <i class="fas fa-tshirt"></i>
-                        <h3>Camisas/Blusas</h3>
+                        <div class="category-image">
+                            <img src="https://images.unsplash.com/photo-1594223274512-ad4803739b7c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Camisas y blusas vintage">
+                        </div>
+                        <div class="category-info">
+                            <h3>Camisas / Blusas</h3>
+                        </div>
                     </a>
                 </div>
                 <div class="category-card">
                     <a href="categoria.html?cat=pantalones">
-                        <i class="fas fa-tshirt"></i>
-                        <h3>Pantalones/Jeans</h3>
+                        <div class="category-image">
+                            <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Pantalones vintage">
+                        </div>
+                        <div class="category-info">
+                            <h3>Pantalones</h3>
+                        </div>
                     </a>
                 </div>
                 <div class="category-card">
                     <a href="categoria.html?cat=abrigos">
-                        <i class="fas fa-tshirt"></i>
-                        <h3>Abrigos/Chaquetas</h3>
+                        <div class="category-image">
+                            <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Abrigos vintage">
+                        </div>
+                        <div class="category-info">
+                            <h3>Abrigos</h3>
+                        </div>
+                    </a>
+                </div>
+                <div class="category-card">
+                    <a href="categoria.html?cat=chaquetas-sudaderas">
+                        <div class="category-image">
+                            <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Chaquetas y sudaderas vintage">
+                        </div>
+                        <div class="category-info">
+                            <h3>Chaquetas y Sudaderas</h3>
+                        </div>
                     </a>
                 </div>
                 <div class="category-card">
                     <a href="categoria.html?cat=accesorios">
-                        <i class="fas fa-tshirt"></i>
-                        <h3>Accesorios</h3>
+                        <div class="category-image">
+                            <img src="https://images.unsplash.com/photo-1594223274512-ad4803739b7c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Accesorios vintage">
+                        </div>
+                        <div class="category-info">
+                            <h3>Accesorios</h3>
+                        </div>
                     </a>
                 </div>
                 <div class="category-card">
                     <a href="categoria.html?cat=calzado">
-                        <i class="fas fa-tshirt"></i>
-                        <h3>Calzado</h3>
+                        <div class="category-image">
+                            <img src="https://images.unsplash.com/photo-1542280756-74b2f55e73ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Calzado vintage">
+                        </div>
+                        <div class="category-info">
+                            <h3>Calzado</h3>
+                        </div>
                     </a>
                 </div>
             </div>
@@ -96,7 +151,7 @@
     <!-- Productos -->
     <section id="productos" class="products">
         <div class="container">
-            <h2>Novedades de Bambú Vintage</h2>
+            <h2>Novedades Exclusivas</h2>
             <div class="products-grid">
                 <!-- Producto 1 -->
                 <div class="product-card">
@@ -104,7 +159,7 @@
                         <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Vestido floral años 70">
                     </div>
                     <div class="product-info">
-                        <h3>Vestido floral años 70</h3>
+                        <h3>Vestido Floral Años 70</h3>
                         <p class="product-price">€25,00</p>
                         <button class="reserve-btn" onclick="reserveProduct('Vestido floral años 70')">
                             <i class="fas fa-shopping-bag"></i> Reservar
@@ -118,7 +173,7 @@
                         <img src="https://images.unsplash.com/photo-1529903384028-929ae5dccdf1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=686&q=80" alt="Chaqueta de mezclilla vintage">
                     </div>
                     <div class="product-info">
-                        <h3>Chaqueta de mezclilla vintage</h3>
+                        <h3>Chaqueta Mezclilla Vintage</h3>
                         <p class="product-price">€35,00</p>
                         <button class="reserve-btn" onclick="reserveProduct('Chaqueta de mezclilla vintage')">
                             <i class="fas fa-shopping-bag"></i> Reservar
@@ -132,7 +187,7 @@
                         <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=735&q=80" alt="Blusa de seda estampada">
                     </div>
                     <div class="product-info">
-                        <h3>Blusa de seda estampada</h3>
+                        <h3>Blusa de Seda Estampada</h3>
                         <p class="product-price">€18,00</p>
                         <button class="reserve-btn" onclick="reserveProduct('Blusa de seda estampada')">
                             <i class="fas fa-shopping-bag"></i> Reservar
@@ -146,7 +201,7 @@
                         <img src="https://images.unsplash.com/photo-1543087903-1ac2ec7aa8c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=689&q=80" alt="Falda plisada vintage">
                     </div>
                     <div class="product-info">
-                        <h3>Falda plisada vintage</h3>
+                        <h3>Falda Plisada Vintage</h3>
                         <p class="product-price">€22,00</p>
                         <button class="reserve-btn" onclick="reserveProduct('Falda plisada vintage')">
                             <i class="fas fa-shopping-bag"></i> Reservar
@@ -160,27 +215,37 @@
     <!-- Filosofía -->
     <section id="filosofia" class="philosophy">
         <div class="container">
-            <h2>La Filosofía de Bambú Vintage</h2>
+            <h2>Nuestra Filosofía Verde</h2>
             <div class="philosophy-grid">
                 <div class="philosophy-item">
-                    <i class="fas fa-leaf"></i>
+                    <i class="fas fa-recycle"></i>
                     <h3>Moda Circular</h3>
-                    <p>En Bambú Vintage creemos en la moda circular. Cada prenda de segunda mano que vendemos es una victoria contra el desperdicio textil y una apuesta por un planeta más limpio.</p>
+                    <p>Cada prenda en Bambú Vintage es parte de un ciclo sostenible. Al elegir segunda mano, reduces residuos y apoyas un modelo de consumo responsable que cuida nuestro planeta.</p>
                 </div>
                 <div class="philosophy-item">
                     <i class="fas fa-award"></i>
-                    <h3>Calidad Duradera</h3>
-                    <p>Seleccionamos prendas con materiales de calidad que han superado la prueba del tiempo. La ropa vintage está hecha para durar, no para desecharse después de pocos usos.</p>
+                    <h3>Calidad que Perdura</h3>
+                    <p>Seleccionamos prendas con materiales de calidad que han superado la prueba del tiempo. La ropa vintage está hecha para durar generaciones, no temporadas.</p>
                 </div>
                 <div class="philosophy-item">
                     <i class="fas fa-star"></i>
                     <h3>Estilo Único</h3>
-                    <p>Encuentra piezas únicas que reflejan tu personalidad. Con la moda de segunda mano, creas un estilo auténtico que nadie más tendrá, lejos de la producción en masa.</p>
+                    <p>Encuentra piezas que reflejan tu autenticidad. Con la moda vintage, creas un estilo personal e irrepetible, lejos de la producción en masa y las tendencias fugaces.</p>
                 </div>
                 <div class="philosophy-item">
-                    <i class="fas fa-hand-holding-heart"></i>
-                    <h3>Consumo Responsable</h3>
+                    <i class="fas fa-heart"></i>
+                    <h3>Compra con Propósito</h3>
                     <p>Cada compra en Bambú Vintage es un voto por un futuro más sostenible. Reducimos el impacto ambiental mientras disfrutas de prendas con carácter e historia.</p>
+                </div>
+                <div class="philosophy-item">
+                    <i class="fas fa-seedling"></i>
+                    <h3>Legado Consciente</h3>
+                    <p>Revivir prendas del pasado es honrar la artesanía y reducir nuestra huella ecológica. Cada elección consciente construye un mañana más verde y hermoso.</p>
+                </div>
+                <div class="philosophy-item">
+                    <i class="fas fa-hands-helping"></i>
+                    <h3>Comunidad Sostenible</h3>
+                    <p>Formamos parte de un movimiento global que valora la moda ética. Juntos creamos un impacto positivo en nuestra comunidad y en el planeta.</p>
                 </div>
             </div>
         </div>
@@ -198,12 +263,12 @@
                 </div>
                 <div class="step">
                     <div class="step-number">2</div>
-                    <h3>Reserva y contacta</h3>
+                    <h3>Reserva, contacta, y...</h3>
                     <p>Pulsa el botón "Reservar" y envíanos un mensaje con tus datos. Te guiaremos personalmente a través del proceso para asegurar que encuentres exactamente lo que necesitas.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">3</div>
-                    <h3>Recoge tu pedido</h3>
+                    <h3>¡Pedido LISTO! :) </h3>
                     <p>Te contactamos para acordar el pago y la entrega de tu nueva prenda. Disfruta de tu compra sostenible con la tranquilidad de haber hecho una elección consciente.</p>
                 </div>
             </div>
@@ -216,18 +281,23 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Bambú Vintage</h3>
-                    <p>Moda sostenible con historia y estilo</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Contacto</h4>
-                    <p><i class="fas fa-envelope"></i> bambusvq@gmail.com</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Síguenos</h4>
+                    <p>Donde el pasado encuentra un futuro sostenible, y cada prenda cuenta una historia que merece ser recordada.</p>
+                    <h4>Síguenos en:</h4>
                     <div class="social-links">
                         <a href="https://instagram.com/bambusevilla" target="_blank"><i class="fab fa-instagram"></i></a>
                         <a href="https://tiktok.com/@bambusvq" target="_blank"><i class="fab fa-tiktok"></i></a>
                     </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p><i class="fas fa-envelope"></i> bambusvq@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +34 667 339 317</p>
+                    <p><i class="fas fa-map-marker-alt"></i> C/ Afan de Ribera, 102 SEVILLA 41006 </p>
+                </div>
+                <div class="footer-section">
+                    <h4>Horarios</h4>
+                    <p><i class="fas fa-clock"></i> Lunes a Viernes: 18:00 - 21:00</p>
+                    <p><i class="fas fa-clock"></i> Sábados: 10:00 - 14:00</p>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -236,6 +306,50 @@
         </div>
     </footer>
 
-    <script src="./scripts/script.js"></script>
+    <script>
+        // JavaScript para el menú hamburguesa
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+
+        hamburger.addEventListener("click", () => {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        });
+
+        // Cerrar menú al hacer clic en un enlace
+        document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
+            hamburger.classList.remove("active");
+            navMenu.classList.remove("active");
+        }));
+
+        // Navbar scroll effect
+        window.addEventListener("scroll", () => {
+            const navbar = document.querySelector(".navbar");
+            if (window.scrollY > 50) {
+                navbar.classList.add("scrolled");
+            } else {
+                navbar.classList.remove("scrolled");
+            }
+        });
+
+        // Función para reservar productos
+        function reserveProduct(productName) {
+            alert(`¡Gracias por tu interés en ${productName}! Te contactaremos pronto para confirmar tu reserva.`);
+        }
+
+        // Carrusel automático
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.hero-slide');
+        const totalSlides = slides.length;
+
+        function nextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % totalSlides;
+            slides[currentSlide].classList.add('active');
+        }
+
+        // Cambiar slide cada 5 segundos
+        setInterval(nextSlide, 3000);
+    </script>
 </body>
 </html>
