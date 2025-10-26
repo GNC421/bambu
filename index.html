@@ -5,7 +5,904 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bambú Vintage - Ropa de Segunda Mano con Estilo</title>
     <meta name="description" content="Descubre moda vintage única y sostenible en Bambú Vintage. Ropa de segunda mano con historia, estilo y conciencia ecológica.">
-    <link rel="stylesheet" href="./styles/styles.css">
+    <style>
+        /* Reset y estilos base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2d5a4a; /* Verde principal */
+            --secondary-color: #b89b7d; /* Marrón claro */
+            --accent-color: #4a7c6a; /* Verde secundario */
+            --text-dark: #333;
+            --text-light: #666;
+            --background-light: #f5f0e8; /* Beige claro */
+            --white: #ffffff;
+            --shadow: 0 2px 10px rgba(0,0,0,0.1);
+            --light-green: #e8f2e9;
+            --light-brown: #f5f0e8;
+            --gold: #d4af37;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@400;500;600;700&family=Abril+Fatface&family=Oswald:wght@400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--background-light);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header y Navegación */
+        .navbar {
+            background: var(--primary-color);
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            background: rgba(45, 90, 74, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--white);
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .logo-img {
+            height: 50px;
+            width: auto;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--white);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--secondary-color);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--secondary-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .bar {
+            width: 25px;
+            height: 3px;
+            background: var(--white);
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Hero Section con Carrusel */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            margin-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-slideshow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .hero-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .hero-slide.active {
+            opacity: 1;
+        }
+
+        .hero-slide::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(45, 90, 74, 0.7);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            z-index: 1;
+            animation: fadeInUp 1s ease-out;
+            padding: 0 20px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-title {
+            font-size: 6rem;
+            margin-bottom: 1.5rem;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--white);
+            text-shadow: 
+                3px 3px 0 var(--secondary-color),
+                -1px -1px 0 var(--secondary-color),  
+                1px -1px 0 var(--secondary-color),
+                -1px 1px 0 var(--secondary-color),
+                1px 1px 0 var(--secondary-color);
+            position: relative;
+        }
+
+        .hero-subtitle {
+            font-size: 1.8rem;
+            margin-bottom: 2.5rem;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: var(--secondary-color);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button:hover {
+            background: var(--accent-color);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Secciones comunes */
+        section {
+            padding: 100px 0;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+            position: relative;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--secondary-color);
+        }
+
+        /* Categorías */
+        .categories {
+            background-color: var(--light-brown);
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .category-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .category-image {
+            width: 100%;
+            height: 180px;
+            overflow: hidden;
+        }
+
+        .category-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .category-card:hover .category-image img {
+            transform: scale(1.1);
+        }
+
+        .category-info {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .category-info h3 {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        /* Productos */
+        .products {
+            background: var(--light-green);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .product-card::before {
+            content: 'NUEVO';
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--gold);
+            color: var(--white);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            z-index: 2;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-info h3 {
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .product-price {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .reserve-btn {
+            width: 100%;
+            padding: 12px;
+            background: var(--primary-color);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            font-weight: 600;
+        }
+
+        .reserve-btn:hover {
+            background: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        /* Filosofía */
+        .philosophy {
+            background-color: var(--light-brown);
+        }
+
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .philosophy-item {
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .philosophy-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .philosophy-item i {
+            font-size: 3.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .philosophy-item h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        .philosophy-item p {
+            line-height: 1.7;
+        }
+
+        /* Carrusel de Filosofía para móviles */
+        .philosophy-carousel {
+            display: none;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .carousel-container {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            padding: 0 10px;
+            box-sizing: border-box;
+        }
+
+        .carousel-control {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(45, 90, 74, 0.7);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: background 0.3s ease;
+        }
+
+        .carousel-control:hover {
+            background: rgba(45, 90, 74, 0.9);
+        }
+
+        .carousel-control.prev {
+            left: 10px;
+        }
+
+        .carousel-control.next {
+            right: 10px;
+        }
+
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 10px;
+        }
+
+        .carousel-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ccc;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .carousel-indicator.active {
+            background: var(--primary-color);
+        }
+
+        /* Cómo Funciona */
+        .how-it-works {
+            background: var(--light-green);
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+        }
+
+        .step {
+            text-align: center;
+            position: relative;
+            padding: 2rem;
+        }
+
+        .step::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            z-index: -1;
+            transition: transform 0.3s ease;
+        }
+
+        .step:hover::before {
+            transform: translateY(-10px);
+        }
+
+        .step-number {
+            width: 70px;
+            height: 70px;
+            background: var(--secondary-color);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .step h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        .step p {
+            line-height: 1.7;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3,
+        .footer-section h4 {
+            margin-bottom: 1.5rem;
+            color: var(--secondary-color);
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .footer-section p {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .footer-section i {
+            width: 20px;
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            font-size: 1.3rem;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Responsive Design Mejorado */
+        @media (max-width: 1024px) {
+            .hero-title {
+                font-size: 4.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.5rem;
+            }
+            
+            .categories-grid,
+            .products-grid,
+            .philosophy-grid,
+            .steps-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 80px;
+                flex-direction: column;
+                background: var(--primary-color);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: var(--shadow);
+                padding: 2rem 0;
+                gap: 0;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-item {
+                margin: 1rem 0;
+            }
+
+            .hero-title {
+                font-size: 3.5rem;
+                letter-spacing: 2px;
+            }
+
+            .hero-subtitle {
+                font-size: 1.3rem;
+            }
+
+            h2 {
+                font-size: 2.2rem;
+            }
+
+            section {
+                padding: 70px 0;
+            }
+            
+            .hero {
+                height: 80vh;
+                margin-top: 80px;
+            }
+            
+            .hero-content {
+                padding: 0 15px;
+            }
+            
+            .cta-button {
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
+            
+            .categories-grid,
+            .products-grid,
+            .steps-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.2rem;
+            }
+            
+            /* Ocultar grid de filosofía y mostrar carrusel en móviles */
+            .philosophy-grid {
+                display: none;
+            }
+            
+            .philosophy-carousel {
+                display: block;
+            }
+            
+            .category-image,
+            .product-image {
+                height: 150px;
+            }
+            
+            .product-info,
+            .category-info,
+            .philosophy-item,
+            .step {
+                padding: 1.2rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .social-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+                letter-spacing: 1px;
+                margin-bottom: 1rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+                margin-bottom: 2rem;
+            }
+            
+            .hero {
+                height: 70vh;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+                margin-bottom: 2rem;
+            }
+            
+            h2::after {
+                bottom: -8px;
+                width: 60px;
+            }
+
+            .categories-grid,
+            .products-grid,
+            .steps-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .category-image,
+            .product-image {
+                height: 200px;
+            }
+            
+            .product-info h3,
+            .category-info h3,
+            .philosophy-item h3,
+            .step h3 {
+                font-size: 1.2rem;
+            }
+            
+            .product-price {
+                font-size: 1.2rem;
+            }
+            
+            .philosophy-item i {
+                font-size: 2.5rem;
+                margin-bottom: 1rem;
+            }
+            
+            .step-number {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+            }
+            
+            .footer-section p {
+                justify-content: center;
+            }
+            
+            .nav-container {
+                padding: 0 15px;
+            }
+            
+            .logo-img {
+                height: 40px;
+            }
+            
+            .cta-button {
+                padding: 10px 25px;
+                font-size: 0.9rem;
+            }
+        }
+        
+        @media (max-width: 360px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .cta-button {
+                padding: 8px 20px;
+                font-size: 0.85rem;
+            }
+            
+            .container {
+                padding: 0 10px;
+            }
+            
+            .nav-container {
+                padding: 0 10px;
+            }
+        }
+
+        /* Imágenes del carrusel Hero - Mismas para todos los dispositivos */
+        .hero-slide:nth-child(1) {
+            background-image: url('./styles/image_resources/inicio1.png');
+        }
+        
+        .hero-slide:nth-child(2) {
+            background-image: url('./styles/image_resources/inicio2.png');
+        }
+        
+        .hero-slide:nth-child(3) {
+            background-image: url('./styles/image_resources/inicio3.png');
+        }
+        
+        .hero-slide:nth-child(4) {
+            background-image: url('./styles/image_resources/inicio4.png');
+        }
+
+        .hero-slide:nth-child(5) {
+            background-image: url('./styles/image_resources/inicio5.png');
+        }
+
+        .hero-slide:nth-child(6) {
+            background-image: url('./styles/image_resources/inicio6.png');
+        }
+
+        .hero-slide:nth-child(7) {
+            background-image: url('./styles/image_resources/inicio7.png');
+        }
+    </style>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
@@ -14,9 +911,8 @@
         <nav class="navbar">
             <div class="nav-container">
                 <a href="#" class="nav-logo">
-                    <img src="./styles/image_resources/logopandaverde.png"alt="Bambú Vintage" class="logo-img">
-                    <img src="./styles/image_resources/logoletra.png"alt="Vintage" class="logo-img">
-                    
+                    <img src="./styles/image_resources/logopandaverde.png" alt="Bambú Vintage" class="logo-img">
+                    <img src="./styles/image_resources/logoletra.png" alt="Vintage" class="logo-img">
                 </a>
                 <ul class="nav-menu">
                     <li class="nav-item">
@@ -50,17 +946,14 @@
     <!-- Hero Section con Carrusel -->
     <section id="inicio" class="hero">
         <div class="hero-slideshow">
-            <!-- Slide 1 -->
-            <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1558769132-cb25f35d8c35?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80')"></div>
-            
-            <!-- Slide 2 -->
-            <div class="hero-slide" style="background-image: url('./styles/image_resources/fotosaray.png')"></div>
-            
-            <!-- Slide 3 -->
-            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1583394838336-acd977736f90?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1148&q=80')"></div>
-            
-            <!-- Slide 4 -->
-            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1287&q=80')"></div>
+            <!-- Slides - Mismas imágenes para todos los dispositivos -->
+            <div class="hero-slide active"></div>
+            <div class="hero-slide"></div>
+            <div class="hero-slide"></div>
+            <div class="hero-slide"></div>
+            <div class="hero-slide"></div>
+            <div class="hero-slide"></div>
+            <div class="hero-slide"></div>
         </div>
         <div class="hero-content">
             <h1 class="hero-title">BAMBÚ VINTAGE</h1>
@@ -216,6 +1109,8 @@
     <section id="filosofia" class="philosophy">
         <div class="container">
             <h2>Nuestra Filosofía Verde</h2>
+            
+            <!-- Grid para escritorio -->
             <div class="philosophy-grid">
                 <div class="philosophy-item">
                     <i class="fas fa-recycle"></i>
@@ -248,6 +1143,68 @@
                     <p>Formamos parte de un movimiento global que valora la moda ética. Juntos creamos un impacto positivo en nuestra comunidad y en el planeta.</p>
                 </div>
             </div>
+            
+            <!-- Carrusel para móviles -->
+            <div class="philosophy-carousel">
+                <div class="carousel-container">
+                    <div class="carousel-slide">
+                        <div class="philosophy-item">
+                            <i class="fas fa-recycle"></i>
+                            <h3>Moda Circular</h3>
+                            <p>Cada prenda en Bambú Vintage es parte de un ciclo sostenible. Al elegir segunda mano, reduces residuos y apoyas un modelo de consumo responsable que cuida nuestro planeta.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="philosophy-item">
+                            <i class="fas fa-award"></i>
+                            <h3>Calidad que Perdura</h3>
+                            <p>Seleccionamos prendas con materiales de calidad que han superado la prueba del tiempo. La ropa vintage está hecha para durar generaciones, no temporadas.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="philosophy-item">
+                            <i class="fas fa-star"></i>
+                            <h3>Estilo Único</h3>
+                            <p>Encuentra piezas que reflejan tu autenticidad. Con la moda vintage, creas un estilo personal e irrepetible, lejos de la producción en masa y las tendencias fugaces.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="philosophy-item">
+                            <i class="fas fa-heart"></i>
+                            <h3>Compra con Propósito</h3>
+                            <p>Cada compra en Bambú Vintage es un voto por un futuro más sostenible. Reducimos el impacto ambiental mientras disfrutas de prendas con carácter e historia.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="philosophy-item">
+                            <i class="fas fa-seedling"></i>
+                            <h3>Legado Consciente</h3>
+                            <p>Revivir prendas del pasado es honrar la artesanía y reducir nuestra huella ecológica. Cada elección consciente construye un mañana más verde y hermoso.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="philosophy-item">
+                            <i class="fas fa-hands-helping"></i>
+                            <h3>Comunidad Sostenible</h3>
+                            <p>Formamos parte de un movimiento global que valora la moda ética. Juntos creamos un impacto positivo en nuestra comunidad y en el planeta.</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control prev">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carousel-control next">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                <div class="carousel-indicators">
+                    <span class="carousel-indicator active" data-index="0"></span>
+                    <span class="carousel-indicator" data-index="1"></span>
+                    <span class="carousel-indicator" data-index="2"></span>
+                    <span class="carousel-indicator" data-index="3"></span>
+                    <span class="carousel-indicator" data-index="4"></span>
+                    <span class="carousel-indicator" data-index="5"></span>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -268,7 +1225,7 @@
                 </div>
                 <div class="step">
                     <div class="step-number">3</div>
-                    <h3>¡Pedido LISTO! :) </h3>
+                    <h3>¡Pedido LISTO! :)</h3>
                     <p>Te contactamos para acordar el pago y la entrega de tu nueva prenda. Disfruta de tu compra sostenible con la tranquilidad de haber hecho una elección consciente.</p>
                 </div>
             </div>
@@ -291,7 +1248,7 @@
                 <div class="footer-section">
                     <h4>Contacto</h4>
                     <p><i class="fas fa-envelope"></i> bambusvq@gmail.com</p>
-                    <p><i class="fas fa-phone"></i> +34 667 339 317</p>
+                    <p><i class="fas fa-phone"></i> +34 667 33 93 17</p>
                     <p><i class="fas fa-map-marker-alt"></i> C/ Afan de Ribera, 102 SEVILLA 41006 </p>
                 </div>
                 <div class="footer-section">
@@ -337,7 +1294,7 @@
             alert(`¡Gracias por tu interés en ${productName}! Te contactaremos pronto para confirmar tu reserva.`);
         }
 
-        // Carrusel automático
+        // Carrusel automático de hero
         let currentSlide = 0;
         const slides = document.querySelectorAll('.hero-slide');
         const totalSlides = slides.length;
@@ -348,8 +1305,82 @@
             slides[currentSlide].classList.add('active');
         }
 
-        // Cambiar slide cada 5 segundos
         setInterval(nextSlide, 3000);
+
+        // Carrusel de filosofía para móviles
+        const carouselContainer = document.querySelector('.carousel-container');
+        const carouselSlides = document.querySelectorAll('.carousel-slide');
+        const prevButton = document.querySelector('.carousel-control.prev');
+        const nextButton = document.querySelector('.carousel-control.next');
+        const indicators = document.querySelectorAll('.carousel-indicator');
+        
+        let currentCarouselIndex = 0;
+        const totalCarouselSlides = carouselSlides.length;
+        let carouselInterval;
+
+        function updateCarousel() {
+            carouselContainer.style.transform = `translateX(-${currentCarouselIndex * 100}%)`;
+            
+            // Actualizar indicadores
+            indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === currentCarouselIndex);
+            });
+        }
+
+        function nextCarouselSlide() {
+            currentCarouselIndex = (currentCarouselIndex + 1) % totalCarouselSlides;
+            updateCarousel();
+        }
+
+        function prevCarouselSlide() {
+            currentCarouselIndex = (currentCarouselIndex - 1 + totalCarouselSlides) % totalCarouselSlides;
+            updateCarousel();
+        }
+
+        // Event listeners para controles
+        nextButton.addEventListener('click', () => {
+            nextCarouselSlide();
+            resetCarouselInterval();
+        });
+
+        prevButton.addEventListener('click', () => {
+            prevCarouselSlide();
+            resetCarouselInterval();
+        });
+
+        // Event listeners para indicadores
+        indicators.forEach(indicator => {
+            indicator.addEventListener('click', () => {
+                currentCarouselIndex = parseInt(indicator.getAttribute('data-index'));
+                updateCarousel();
+                resetCarouselInterval();
+            });
+        });
+
+        // Auto avanzar el carrusel
+        function startCarouselInterval() {
+            carouselInterval = setInterval(nextCarouselSlide, 4000);
+        }
+
+        function resetCarouselInterval() {
+            clearInterval(carouselInterval);
+            startCarouselInterval();
+        }
+
+        // Iniciar carrusel solo si estamos en móvil
+        if (window.innerWidth <= 768) {
+            startCarouselInterval();
+        }
+
+        // Reiniciar carrusel al cambiar tamaño de ventana
+        window.addEventListener('resize', () => {
+            if (window.innerWidth <= 768 && !carouselInterval) {
+                startCarouselInterval();
+            } else if (window.innerWidth > 768) {
+                clearInterval(carouselInterval);
+                carouselInterval = null;
+            }
+        });
     </script>
 </body>
 </html>
