@@ -11,7 +11,7 @@ async function initializeCategoryPage() {
     currentCategory = urlParams.get('cat') || '';
     
     // Cargar productos
-    productsData = await loadProductsFromCSV();
+    productsData = await loadProductsFromJSON();
     
     // Actualizar interfaz
     updateCategoryHeader();
@@ -23,38 +23,20 @@ async function initializeCategoryPage() {
     document.querySelector('.pagination-btn:last-child').addEventListener('click', goToNextPage);
 }
 
-function parseCSV(csvText) {
-    const lines = csvText.split('\n').filter(line => line.trim() !== '');
-    const headers = lines[0].split(';').map(header => header.trim());
-    
-    const products = [];
-    
-    for (let i = 1; i < lines.length; i++) {
-        const values = lines[i].split(';').map(value => value.trim());
-        const product = {};
-        
-        headers.forEach((header, index) => {
-            product[header.toLowerCase()] = values[index] || '';
-        });
-        
-        // Convertir precio a número
-        product.precio = parseFloat(product.precio) || 0;
-        
-        products.push(product);
-    }
-    
-    return products;
-}
-
-// Función para cargar desde archivo
-async function loadProductsFromCSV(csvPath = '../csv_catalogo/CATALOGO.csv') {
+// Función principal para cargar productos desde JSON
+async function loadProductsFromJSON() {
     try {
-        const response = await fetch(csvPath);
-        const csvText = await response.text();
-        return parseCSV(csvText);
+        const response = await fetch('../csv_catalogo/inventario.json');
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const products = await response.json();
+        console.log(`✅ JSON cargado correctamente: ${products.length} productos`);
+        return products;
     } catch (error) {
-        console.error('Error cargando CSV:', error);
-        return [];
+        console.error('❌ Error cargando JSON:', error);
+        console.log('📦 Cargando datos de ejemplo...');
+        return []; // Retorna un array vacío en caso de error
     }
 }
 
@@ -79,7 +61,7 @@ function filterProductsByCategory() {
     }
     
     return productsData.filter(product => 
-        product.categoria.toLowerCase() === currentCategory.toLowerCase()
+        product.CATEGORIA.toLowerCase() === currentCategory.toLowerCase()
     );
 }
 
@@ -97,20 +79,20 @@ function renderProducts() {
             </div>
         `;
     } else {
-        productsGrid.innerHTML = paginatedProducts.map(product => `
+        productsGrid.innerHTML = paginatedProducts.map(product =>`
             <div class="product-card">
                 <div class="product-image">
-                    <img src="${'../image_catalogo/' + product.ruta_imagen + '-1.jpeg' || 'https://via.placeholder.com/300x400'}" alt="${product.nombre}">
+                    <img src="${'../image_catalogo/' + product.RUTA_IMAGEN + '-1.jpeg' || 'https://via.placeholder.com/300x400'}" alt="${product.NOMBRE}">
                 </div>
                 <div class="product-info">
-                    <h3>${product.nombre}</h3>
-                    <p class="product-brand">${product.marca}</p>
+                    <h3>${product.NOMBRE}</h3>
+                    <p class="product-brand">${product.MARCA}</p>
                     <div class="product-details">
-                        <span class="product-size">Talla: ${product.talla}</span>
-                        <span class="product-color">Color: ${product.color}</span>
+                        <span class="product-size">Talla: ${product.TALLA}</span>
+                        <span class="product-color">Color: ${product.COLOR}</span>
                     </div>
-                    <p class="product-price">€${product.precio}</p>
-                    <button class="reserve-btn" onclick="reserveProduct('${product.nombre}')">
+                    <p class="product-price">€${product.PRECIO}</p>
+                    <button class="reserve-btn" onclick="reserveProduct('${product.NOMBRE}')">
                         <i class="fas fa-shopping-bag"></i> Reservar
                     </button>
                 </div>
