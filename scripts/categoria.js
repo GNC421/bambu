@@ -26,7 +26,7 @@ async function initializeCategoryPage() {
 // Función principal para cargar productos desde JSON
 async function loadProductsFromJSON() {
     try {
-        const response = await fetch('../csv_catalogo/inventario.json');
+        const response = await fetch('https://raw.githubusercontent.com/GNC421/bambu/csvImport/csv_catalogo/inventario.json');
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
