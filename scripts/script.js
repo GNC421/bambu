@@ -64,7 +64,7 @@ async function loadLatestProducts() {
         productsGrid.innerHTML = latestProducts.map(product => `
             <div class="product-card">
                 <div class="product-image">
-                    <img src="${'../image_catalogo/' + product.RUTA_IMAGEN + '-1.jpeg' || 'https://via.placeholder.com/300x400'}" alt="${product.NOMBRE}">
+                    <img src="${'https://raw.githubusercontent.com/GNC421/bambu/csvImport/image_catalogo/' + product.RUTA_IMAGEN + '-1.jpeg' || 'https://via.placeholder.com/300x400'}" alt="${product.NOMBRE}">
                 </div>
                 <div class="product-info">
                     <h3>${product.NOMBRE}</h3>
