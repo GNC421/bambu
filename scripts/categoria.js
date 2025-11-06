@@ -26,7 +26,7 @@ async function initializeCategoryPage() {
 // Función principal para cargar productos desde JSON
 async function loadProductsFromJSON() {
     try {
-        const response = await fetch('https://raw.githubusercontent.com/GNC421/bambu/csvImport/csv_catalogo/inventario.json');
+        const response = await fetch('https://raw.githubusercontent.com/GNC421/bambu/main/csv_catalogo/inventario.json');
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -82,7 +82,7 @@ function renderProducts() {
         productsGrid.innerHTML = paginatedProducts.map(product =>`
             <div class="product-card">
                 <div class="product-image">
-                    <img src="${'https://raw.githubusercontent.com/GNC421/bambu/csvImport/image_catalogo/' + product.RUTA_IMAGEN + '-1.jpeg' || 'https://via.placeholder.com/300x400'}" alt="${product.NOMBRE}">
+                    <img src="${'https://raw.githubusercontent.com/GNC421/bambu/main/image_catalogo/' + product.RUTA_IMAGEN + '-1.jpeg' || 'https://via.placeholder.com/300x400'}" alt="${product.NOMBRE}">
                 </div>
                 <div class="product-info">
                     <h3>${product.NOMBRE}</h3>
