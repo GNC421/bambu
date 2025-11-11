@@ -15,7 +15,7 @@ document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', 
 
 // Función para reservar productos
 function reserveProduct(productName) {
-    const phoneNumber = '+34123456789';
+    const phoneNumber = '+34667339317';
     const message = `Hola! Me interesa reservar: ${productName}. Por favor, contáctenme para concretar los detalles.`;
     
     // Opción 1: Abrir WhatsApp
