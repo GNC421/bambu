@@ -64,74 +64,36 @@
     <main class="category-main">
         <div class="container">
             <div class="category-layout">
+                <!-- Añade esto antes del filters-sidebar -->
+                <button class="mobile-filters-toggle" id="mobile-filters-toggle">
+                    <i class="fas fa-filter"></i>
+                    Filtros
+                </button>
                 <!-- Sidebar de Filtros -->
-                <aside class="filters-sidebar">
+                <aside class="filters-sidebar" id="filters-sidebar">
                     <div class="filters-header">
                         <h3>Filtros</h3>
-                        <button class="clear-filters" id="clear-filters">Limpiar</button>
+                        <div class="filter-actions">
+                            <button class="clear-filters" id="clear-filters">Limpiar</button>
+                            <button class="close-filters" id="close-filters" aria-label="Cerrar filtros">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
                     </div>
 
-                    <!-- Filtro Marcas -->
+                    <!-- Filtro Marcas (dinámico) -->
                     <div class="filter-group">
                         <h4>Marcas</h4>
-                        <div class="filter-options">
-                            <label class="filter-option">
-                                <input type="checkbox" name="brand" value="levis">
-                                <span class="checkmark"></span>
-                                Levi's
-                            </label>
-                            <label class="filter-option">
-                                <input type="checkbox" name="brand" value="zara">
-                                <span class="checkmark"></span>
-                                Zara
-                            </label>
-                            <label class="filter-option">
-                                <input type="checkbox" name="brand" value="h&m">
-                                <span class="checkmark"></span>
-                                H&M
-                            </label>
-                            <label class="filter-option">
-                                <input type="checkbox" name="brand" value="mango">
-                                <span class="checkmark"></span>
-                                Mango
-                            </label>
-                            <label class="filter-option">
-                                <input type="checkbox" name="brand" value="otras">
-                                <span class="checkmark"></span>
-                                Otras marcas
-                            </label>
+                        <div class="filter-options-brands">
+                            <!-- Las marcas se generarán automáticamente aquí -->
                         </div>
                     </div>
 
                     <!-- Filtro Tallas -->
                     <div class="filter-group">
                         <h4>Tallas</h4>
-                        <div class="filter-options">
-                            <label class="filter-option">
-                                <input type="checkbox" name="size" value="xs">
-                                <span class="checkmark"></span>
-                                XS
-                            </label>
-                            <label class="filter-option">
-                                <input type="checkbox" name="size" value="s">
-                                <span class="checkmark"></span>
-                                S
-                            </label>
-                            <label class="filter-option">
-                                <input type="checkbox" name="size" value="m">
-                                <span class="checkmark"></span>
-                                M
-                            </label>
-                            <label class="filter-option">
-                                <input type="checkbox" name="size" value="l">
-                                <span class="checkmark"></span>
-                                L
-                            </label>
-                            <label class="filter-option">
-                                <input type="checkbox" name="size" value="xl">
-                                <span class="checkmark"></span>
-                                XL
-                            </label>
+                        <div class="filter-options-sizes">
+                            <!-- Las tallas se generarán automáticamente aquí -->
                         </div>
                     </div>
 
@@ -140,15 +102,9 @@
                         <h4>Precio</h4>
                         <div class="price-filter">
                             <div class="price-inputs">
-                                <input type="number" id="min-price" placeholder="Mín" min="0" max="100">
+                                <input type="number" id="min-price" placeholder="Mín" min="0" max="999">
                                 <span>-</span>
-                                <input type="number" id="max-price" placeholder="Máx" min="0" max="100">
-                            </div>
-                            <div class="price-quick-filters">
-                                <button class="price-quick-btn" data-min="0" data-max="20">< €20</button>
-                                <button class="price-quick-btn" data-min="20" data-max="40">€20-€40</button>
-                                <button class="price-quick-btn" data-min="40" data-max="60">€40-€60</button>
-                                <button class="price-quick-btn" data-min="60" data-max="100">> €60</button>
+                                <input type="number" id="max-price" placeholder="Máx" min="0" max="999">
                             </div>
                         </div>
                     </div>
@@ -157,41 +113,7 @@
                     <div class="filter-group">
                         <h4>Color</h4>
                         <div class="color-filters">
-                            <label class="color-option">
-                                <input type="checkbox" name="color" value="negro">
-                                <span class="color-swatch" style="background-color: #000;"></span>
-                                Negro
-                            </label>
-                            <label class="color-option">
-                                <input type="checkbox" name="color" value="blanco">
-                                <span class="color-swatch" style="background-color: #fff; border: 1px solid #ddd;"></span>
-                                Blanco
-                            </label>
-                            <label class="color-option">
-                                <input type="checkbox" name="color" value="rojo">
-                                <span class="color-swatch" style="background-color: #ff0000;"></span>
-                                Rojo
-                            </label>
-                            <label class="color-option">
-                                <input type="checkbox" name="color" value="azul">
-                                <span class="color-swatch" style="background-color: #0000ff;"></span>
-                                Azul
-                            </label>
-                            <label class="color-option">
-                                <input type="checkbox" name="color" value="verde">
-                                <span class="color-swatch" style="background-color: #008000;"></span>
-                                Verde
-                            </label>
-                            <label class="color-option">
-                                <input type="checkbox" name="color" value="rosa">
-                                <span class="color-swatch" style="background-color: #ffc0cb;"></span>
-                                Rosa
-                            </label>
-                            <label class="color-option">
-                                <input type="checkbox" name="color" value="estampado">
-                                <span class="color-swatch" style="background: linear-gradient(45deg, #ff0000, #0000ff, #00ff00);"></span>
-                                Estampado
-                            </label>
+                            <!-- Los filtros de color se generarán automáticamente aquí -->
                         </div>
                     </div>
                 </aside>
@@ -276,5 +198,6 @@
 
     <script src="./scripts/script.js"></script>
     <script src="./scripts/categoria.js"></script>
+    <script src="./scripts/filters.js"></script>
 </body>
 </html>

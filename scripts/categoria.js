@@ -18,6 +18,21 @@ async function initializeCategoryPage() {
     renderProducts();
     updatePageHeader();
 
+    // Inicializar filtros con los productos cargados
+    if (typeof initializeFilters === 'function') {
+        initializeFilters(filterProductsByCategory());
+    }
+    
+    // Escuchar cambios de filtros
+    document.addEventListener('filtersUpdated', (e) => {
+        console.log('Filtros actualizados, renderizando productos filtrados: ', e.detail);
+        console.log('Estado de filtros actuales:', getCurrentFilters());
+        console.log("e.detail.length:", e.detail.length);
+        console.log(!areFiltersEmpty());
+        productsData = e.detail;
+        renderProducts();
+    });
+
     // Añadir event listeners a la paginación
     document.querySelector('.pagination-btn:first-child').addEventListener('click', goToPreviousPage);
     document.querySelector('.pagination-btn:last-child').addEventListener('click', goToNextPage);
@@ -65,7 +80,7 @@ function filterProductsByCategory() {
     );
 }
 
-// Renderizar productos filtrados
+// Renderizar productos
 function renderProducts() {
     const productsGrid = document.getElementById('products-grid');
     const paginatedProducts = getPaginatedProducts();
@@ -120,11 +135,12 @@ function updatePageHeader() {
 function getPaginatedProducts() {
     const startIndex = (currentPage - 1) * productsPerPage;
     const endIndex = startIndex + productsPerPage;
-    return filterProductsByCategory().slice(startIndex, endIndex);
+    return productsData.slice(startIndex, endIndex);
 }
 
 function updatePagination() {
-    const totalPages = Math.ceil(filterProductsByCategory().length / productsPerPage);
+    const length = productsData.length;
+    const totalPages = Math.ceil(length / productsPerPage);
     const prevBtn = document.querySelector('.pagination-btn:first-child');
     const nextBtn = document.querySelector('.pagination-btn:last-child');
     const paginationInfo = document.querySelector('.pagination-info');
@@ -146,7 +162,7 @@ function goToPreviousPage() {
 
 function goToNextPage() {
     console.log('Intentando ir a la siguiente página');
-    const totalPages = Math.ceil(productsData.length / productsPerPage);
+    const totalPages = Math.ceil(productsData / productsPerPage);
     if (currentPage < totalPages) {
         currentPage++;
         renderProducts();
@@ -154,18 +170,18 @@ function goToNextPage() {
 }
 
 function updateProductCount() {
+    const length = productsData.length;
     const countElement = document.getElementById('product-count');
     const showingElement = document.getElementById('showing-count');
-    const totalProducts = filterProductsByCategory().length;
     const showingProducts = getPaginatedProducts().length;
     const startIndex = (currentPage - 1) * productsPerPage + 1;
-    const endIndex = Math.min(startIndex + showingProducts - 1, totalProducts);
+    const endIndex = Math.min(startIndex + showingProducts - 1, length);
     
     if (countElement) {
-        countElement.textContent = `${totalProducts} productos en total`;
+        countElement.textContent = `${length} productos en total`;
     }
     if (showingElement) {
-        showingElement.textContent = `Mostrando ${startIndex}-${endIndex} de ${totalProducts} productos`;
+        showingElement.textContent = `Mostrando ${startIndex}-${endIndex} de ${length} productos`;
     }
 }
 
