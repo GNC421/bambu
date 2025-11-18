@@ -8,7 +8,11 @@
     "COLOR": "AZUL",
     "PRECIO": 15,
     "DESCRIPCION": "",
-    "RUTA_IMAGEN": "C1",
+    "RUTA_IMAGEN": [
+      "C1-1.jpeg",
+      "C1-2.jpeg",
+      "C1-3.jpeg"
+    ],
     "CATEGORIA": "ABRIGOS"
   },
   {
@@ -20,7 +24,9 @@
     "COLOR": "NEGRO",
     "PRECIO": 9,
     "DESCRIPCION": "",
-    "RUTA_IMAGEN": "C2",
+    "RUTA_IMAGEN": [
+      "C2-1.jpeg"
+    ],
     "CATEGORIA": "ABRIGOS"
   },
   {
@@ -32,7 +38,11 @@
     "COLOR": "MARRON",
     "PRECIO": 9,
     "DESCRIPCION": "",
-    "RUTA_IMAGEN": "C3",
+    "RUTA_IMAGEN": [
+      "C3-1.jpeg",
+      "C3-2.jpeg",
+      "C3-3.jpeg"
+    ],
     "CATEGORIA": "PANTALONES"
   },
   {
@@ -44,7 +54,11 @@
     "COLOR": "AZUL",
     "PRECIO": 9,
     "DESCRIPCION": "",
-    "RUTA_IMAGEN": "C4",
+    "RUTA_IMAGEN": [
+      "C4-1.jpeg",
+      "C4-2.jpeg",
+      "C4-3.jpeg"
+    ],
     "CATEGORIA": "PANTALONES"
   },
   {
@@ -56,7 +70,11 @@
     "COLOR": "AZUL",
     "PRECIO": 9,
     "DESCRIPCION": "",
-    "RUTA_IMAGEN": "C5",
+    "RUTA_IMAGEN": [
+      "C5-1.jpeg",
+      "C5-2.jpeg",
+      "C5-3.jpeg"
+    ],
     "CATEGORIA": "PANTALONES"
   },
   {
@@ -68,7 +86,10 @@
     "COLOR": "GRIS",
     "PRECIO": 17,
     "DESCRIPCION": "",
-    "RUTA_IMAGEN": "C6",
+    "RUTA_IMAGEN": [
+      "C6-1.jpeg",
+      "C6-2.jpeg"
+    ],
     "CATEGORIA": "ABRIGOS"
   },
   {
@@ -80,7 +101,11 @@
     "COLOR": "AZUL",
     "PRECIO": 20,
     "DESCRIPCION": "",
-    "RUTA_IMAGEN": "C7",
+    "RUTA_IMAGEN": [
+      "C7-1.jpeg",
+      "C7-2.jpeg",
+      "C7-3.jpeg"
+    ],
     "CATEGORIA": "ABRIGOS"
   },
   {
@@ -92,7 +117,11 @@
     "COLOR": "NEGRO&BLANCO",
     "PRECIO": 10,
     "DESCRIPCION": "",
-    "RUTA_IMAGEN": "C8",
+    "RUTA_IMAGEN": [
+      "C8-1.jpeg",
+      "C8-2.jpeg",
+      "C8-3.jpeg"
+    ],
     "CATEGORIA": "CAMISAS"
   },
   {
@@ -104,7 +133,10 @@
     "COLOR": "AZUL",
     "PRECIO": 10,
     "DESCRIPCION": "",
-    "RUTA_IMAGEN": "C9",
+    "RUTA_IMAGEN": [
+      "C9-1.jpeg",
+      "C9-2.jpeg"
+    ],
     "CATEGORIA": "CAMISAS"
   },
   {
@@ -116,7 +148,10 @@
     "COLOR": "AZUL",
     "PRECIO": 10,
     "DESCRIPCION": "",
-    "RUTA_IMAGEN": "C10",
+    "RUTA_IMAGEN": [
+      "C10-1.jpeg",
+      "C10-2.jpeg"
+    ],
     "CATEGORIA": "CAMISAS"
   },
   {
@@ -128,7 +163,9 @@
     "COLOR": "NARANJA",
     "PRECIO": 10,
     "DESCRIPCION": "",
-    "RUTA_IMAGEN": "C11",
+    "RUTA_IMAGEN": [
+      "C11-1.jpeg"
+    ],
     "CATEGORIA": "CAMISAS"
   },
   {
@@ -140,7 +177,10 @@
     "COLOR": "AZUL",
     "PRECIO": 10,
     "DESCRIPCION": "",
-    "RUTA_IMAGEN": "C12",
+    "RUTA_IMAGEN": [
+      "C12-1.jpeg",
+      "C12-2.jpeg"
+    ],
     "CATEGORIA": "CAMISAS"
   },
   {
@@ -152,7 +192,11 @@
     "COLOR": "BLANCO",
     "PRECIO": 10,
     "DESCRIPCION": "",
-    "RUTA_IMAGEN": "C13",
+    "RUTA_IMAGEN": [
+      "C13-1.jpeg",
+      "C13-2.jpeg",
+      "C13-3.jpeg"
+    ],
     "CATEGORIA": "CAMISAS"
   },
   {
@@ -164,7 +208,10 @@
     "COLOR": "ROJO",
     "PRECIO": 7,
     "DESCRIPCION": "",
-    "RUTA_IMAGEN": "C14",
+    "RUTA_IMAGEN": [
+      "C14-1.jpeg",
+      "C14-2.jpeg"
+    ],
     "CATEGORIA": "CAMISAS"
   },
   {
@@ -176,7 +223,11 @@
     "COLOR": "AZUL",
     "PRECIO": 9,
     "DESCRIPCION": "",
-    "RUTA_IMAGEN": "C15",
+    "RUTA_IMAGEN": [
+      "C15-1.jpeg",
+      "C15-2.jpeg",
+      "C15-3.jpeg"
+    ],
     "CATEGORIA": "PANTALONES"
   },
   {
@@ -188,7 +239,11 @@
     "COLOR": "ROJO",
     "PRECIO": 20,
     "DESCRIPCION": "",
-    "RUTA_IMAGEN": "C16",
+    "RUTA_IMAGEN": [
+      "C16-1.jpeg",
+      "C16-2.jpeg",
+      "C16-3.jpeg"
+    ],
     "CATEGORIA": "ABRIGOS"
   },
   {
@@ -212,7 +267,10 @@
     "COLOR": "BURDEOS",
     "PRECIO": 10,
     "DESCRIPCION": "",
-    "RUTA_IMAGEN": "C18",
+    "RUTA_IMAGEN": [
+      "C18-1.jpeg",
+      "C18-2.jpeg"
+    ],
     "CATEGORIA": "CAMISAS"
   },
   {
@@ -224,7 +282,10 @@
     "COLOR": "GRIS",
     "PRECIO": 12,
     "DESCRIPCION": "",
-    "RUTA_IMAGEN": "C19",
+    "RUTA_IMAGEN": [
+      "C19-1.jpeg",
+      "C19-2.jpeg"
+    ],
     "CATEGORIA": "CAMISAS"
   },
   {
@@ -236,7 +297,10 @@
     "COLOR": "ESTAMPADO",
     "PRECIO": 12,
     "DESCRIPCION": "",
-    "RUTA_IMAGEN": "C20",
+    "RUTA_IMAGEN": [
+      "C20-1.jpeg",
+      "C20-2.jpeg"
+    ],
     "CATEGORIA": "CAMISAS"
   },
   {
@@ -248,7 +312,10 @@
     "COLOR": "CREMA",
     "PRECIO": 12,
     "DESCRIPCION": "",
-    "RUTA_IMAGEN": "C21",
+    "RUTA_IMAGEN": [
+      "C21-1.jpeg",
+      "C21-2.jpeg"
+    ],
     "CATEGORIA": "CAMISAS"
   },
   {
@@ -260,7 +327,10 @@
     "COLOR": "ESTAMPADO",
     "PRECIO": 10,
     "DESCRIPCION": "",
-    "RUTA_IMAGEN": "C22",
+    "RUTA_IMAGEN": [
+      "C22-1.jpeg",
+      "C22-2.jpeg"
+    ],
     "CATEGORIA": "CAMISAS"
   },
   {
@@ -272,7 +342,10 @@
     "COLOR": "MARRON",
     "PRECIO": 25,
     "DESCRIPCION": "",
-    "RUTA_IMAGEN": "C23",
+    "RUTA_IMAGEN": [
+      "C23-1.jpeg",
+      "C23-2.jpeg"
+    ],
     "CATEGORIA": "ABRIGOS"
   },
   {
@@ -284,7 +357,10 @@
     "COLOR": "TURQUESA",
     "PRECIO": 30,
     "DESCRIPCION": "",
-    "RUTA_IMAGEN": "C24",
+    "RUTA_IMAGEN": [
+      "C24-1.jpeg",
+      "C24-2.jpeg"
+    ],
     "CATEGORIA": "ABRIGOS"
   },
   {
@@ -296,7 +372,10 @@
     "COLOR": "ROJO",
     "PRECIO": 20,
     "DESCRIPCION": "",
-    "RUTA_IMAGEN": "C25",
+    "RUTA_IMAGEN": [
+      "C25-1.jpeg",
+      "C25-2.jpeg"
+    ],
     "CATEGORIA": "ABRIGOS"
   },
   {
@@ -308,7 +387,10 @@
     "COLOR": "ROSA",
     "PRECIO": 20,
     "DESCRIPCION": "",
-    "RUTA_IMAGEN": "C26",
+    "RUTA_IMAGEN": [
+      "C26-1.jpeg",
+      "C26-2.jpeg"
+    ],
     "CATEGORIA": "ABRIGOS"
   },
   {
@@ -320,7 +402,10 @@
     "COLOR": "MARRON",
     "PRECIO": 17,
     "DESCRIPCION": "",
-    "RUTA_IMAGEN": "C27",
+    "RUTA_IMAGEN": [
+      "C27-1.jpeg",
+      "C27-2.jpeg"
+    ],
     "CATEGORIA": "ABRIGOS"
   },
   {
@@ -332,7 +417,10 @@
     "COLOR": "BEIGE",
     "PRECIO": 20,
     "DESCRIPCION": "",
-    "RUTA_IMAGEN": "C28",
+    "RUTA_IMAGEN": [
+      "C28-1.jpeg",
+      "C28-2.jpeg"
+    ],
     "CATEGORIA": "ABRIGOS"
   },
   {
@@ -344,7 +432,10 @@
     "COLOR": "GRIS",
     "PRECIO": 12,
     "DESCRIPCION": "",
-    "RUTA_IMAGEN": "C29",
+    "RUTA_IMAGEN": [
+      "C29-1.jpeg",
+      "C29-2.jpeg"
+    ],
     "CATEGORIA": "ABRIGOS"
   }
 ]

@@ -49,7 +49,6 @@ function getColorHex(colorName) {
 // Inicializar filtros
 function initializeFilters(products) {
     productsDataFiltered = products;
-    console.log('Inicializando filtros con productos:', productsDataFiltered);
     setupMobileFilters();
     setupPriceFilters();
     generateDynamicFilters(); // Ahora genera filtros basados en los productos
@@ -77,7 +76,6 @@ function setupPriceFilters() {
 function generateBrandFilters() {
     // Obtener marcas únicas de los productos actuales
     const brands = [...new Set(productsDataFiltered.map(p => p.MARCA))].sort();
-    console.log(`Marcas encontradas para filtros:`, brands);
     const brandContainer = document.querySelector('.filter-options-brands');
     
     if (brandContainer) {
@@ -93,8 +91,6 @@ function generateBrandFilters() {
                 ${brand}
             </label>
         `).join('');
-        
-        console.log(`✅ Filtros de marca generados: ${brands.length} marcas encontradas`);
     }
 }
 
@@ -102,7 +98,6 @@ function generateBrandFilters() {
 function generateSizeFilters() {
     // Obtener marcas únicas de los productos actuales
     const brands = [...new Set(productsDataFiltered.map(p => p.TALLA))].sort();
-    console.log(`Marcas encontradas para filtros:`, brands);
     const brandContainer = document.querySelector('.filter-options-sizes');
     
     if (brandContainer) {
@@ -118,8 +113,6 @@ function generateSizeFilters() {
                 ${brand}
             </label>
         `).join('');
-        
-        console.log(`✅ Filtros de marca generados: ${brands.length} marcas encontradas`);
     }
 }
 
@@ -151,8 +144,6 @@ function generateColorFilters() {
         .join('');
     
     colorContainer.innerHTML = colorFiltersHTML;
-    
-    console.log(`✅ Filtros de color generados: ${Object.keys(colorMap).filter(c => availableSet.has(c)).length} colores disponibles`);
 }
 
 // Manejar cambio en inputs de precio
@@ -183,12 +174,9 @@ function setupFilterEvents() {
 function handleFilterChange(filterType, filterValue, isChecked) {
     if (isChecked) {
         if (!currentFilters[filterType].includes(filterValue)) {
-            console.log(`Añadiendo filtro: ${filterType} = ${filterValue}`);
             currentFilters[filterType].push(filterValue);
-            console.log('Filtros actuales:', currentFilters);
         }
     } else {
-        console.log(`Removiendo filtro: ${filterType} = ${filterValue}`);
         currentFilters[filterType] = currentFilters[filterType].filter(item => item !== filterValue);
     }
     applyFilters();
@@ -267,21 +255,17 @@ function setupMobileFilters() {
     if (mobileToggle && filtersSidebar && closeFilters) {
         // Abrir filtros
         mobileToggle.addEventListener('click', () => {
-            console.log('Abriendo filtros');
             filtersSidebar.classList.add('active');
         });
         
         // Cerrar filtros
         closeFilters.addEventListener('click', () => {
-            console.log('Cerrando filtros');
             filtersSidebar.classList.remove('active');
         });
         
         // Cerrar al hacer clic fuera
         document.addEventListener('click', (e) => {
-            console.log('Clic detectado en el documento');
             if (!filtersSidebar.contains(e.target) && !mobileToggle.contains(e.target)) {
-                console.log('Clic fuera del sidebar de filtros, cerrando...');
                 filtersSidebar.classList.remove('active');
             }
         });
