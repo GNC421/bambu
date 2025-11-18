@@ -11,8 +11,6 @@ async function loadLatestProducts() {
             productsGrid.innerHTML = '<p>No hay productos disponibles</p>';
             return;
         }
-
-        console.log('Mostrando los últimos productos:', latestProducts);
         
         productsGrid.innerHTML = latestProducts.map(product => `
             <div class="product-card">
