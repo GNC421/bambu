@@ -12,6 +12,7 @@ async function initializeCategoryPage() {
     
     // Cargar productos
     productsData = await loadProductsFromJSON();
+    productsData = filterProductsByCategory();
     
     // Actualizar interfaz
     updateCategoryHeader();
@@ -159,7 +160,7 @@ function goToPreviousPage() {
 }
 
 function goToNextPage() {
-    const totalPages = Math.ceil(productsData / productsPerPage);
+    const totalPages = Math.ceil(productsData.length / productsPerPage);
     if (currentPage < totalPages) {
         currentPage++;
         renderProducts();
@@ -224,7 +225,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function initSlider(slider) {
-    console.log('Inicializando slider:', slider);
     const images = Array.from(slider.querySelectorAll('.slider-image'))
         .filter(img => img.style.display !== 'none'); // Solo imágenes visibles
     
