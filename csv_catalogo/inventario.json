@@ -255,7 +255,10 @@
     "COLOR": "ROJO",
     "PRECIO": 20,
     "DESCRIPCION": "",
-    "RUTA_IMAGEN": "C17",
+    "RUTA_IMAGEN": [
+      "C17-1.jpeg",
+      "C17-2.jpeg"
+    ],
     "CATEGORIA": "ABRIGOS"
   },
   {
