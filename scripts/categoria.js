@@ -38,6 +38,31 @@ async function initializeCategoryPage() {
     document.querySelectorAll('.product-image-slider').forEach(slider => {
         initSlider(slider);
     });
+
+    // Modificar el evento click para pasar toda la información
+    document.addEventListener('click', function(e) {
+        // Si se hace clic en el slider container
+        if (e.target.closest('.slider-container')) {
+            const slider = e.target.closest('.product-image-slider');
+            if (!slider) return;
+            
+            const productCard = slider.closest('.product-card');
+            const productName = productCard.querySelector('h3')?.textContent || 'Producto';
+            
+            // Obtener todas las imágenes del slider
+            const images = Array.from(slider.querySelectorAll('.slider-image'))
+                .map(img => img.src);
+            
+            // Obtener índice actual
+            const currentImg = slider.querySelector('.slider-image.active');
+            const currentIndex = currentImg ? 
+                Array.from(slider.querySelectorAll('.slider-image')).indexOf(currentImg) : 0;
+            
+            if (images.length > 0) {
+                openImageModal(productName, images, currentIndex);
+            }
+        }
+    });
 }
 
 // Función principal para cargar productos desde JSON
@@ -270,4 +295,121 @@ function initSlider(slider) {
     dots.forEach((dot, index) => {
         dot.addEventListener('click', () => showSlide(index));
     });
+}
+
+function openImageModal(productName, images, currentIndex = 0) {
+    // Crear modal si no existe
+    let modal = document.getElementById('image-modal');
+    
+    if (!modal) {
+        modal = document.createElement('div');
+        modal.id = 'image-modal';
+        modal.className = 'image-modal';
+        document.body.appendChild(modal);
+    }
+    
+    // HTML del slider completo
+    modal.innerHTML = `
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-slider-container">
+                ${images.map((imgSrc, index) => `
+                    <img src="${imgSrc}" 
+                         alt="${productName}" 
+                         class="modal-slider-image ${index === currentIndex ? 'active' : ''}">
+                `).join('')}
+            </div>
+            ${images.length > 1 ? `
+                <button class="modal-slider-prev">‹</button>
+                <button class="modal-slider-next">›</button>
+                <div class="modal-slider-dots">
+                    ${images.map((_, index) => `
+                        <span class="modal-slider-dot ${index === currentIndex ? 'active' : ''}" data-index="${index}"></span>
+                    `).join('')}
+                </div>
+            ` : ''}
+        </div>
+    `;
+    
+    // Mostrar modal
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    
+    // Inicializar slider del modal
+    initModalSlider(modal, currentIndex);
+    
+    // Event listeners
+    modal.querySelector('.modal-close').addEventListener('click', closeImageModal);
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            closeImageModal();
+        }
+    });
+    
+    // Cerrar con Escape
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeImageModal();
+        }
+    });
+}
+
+function initModalSlider(modal, startIndex = 0) {
+    const images = modal.querySelectorAll('.modal-slider-image');
+    const dots = modal.querySelectorAll('.modal-slider-dot');
+    const prevBtn = modal.querySelector('.modal-slider-prev');
+    const nextBtn = modal.querySelector('.modal-slider-next');
+    
+    let currentIndex = startIndex;
+    
+    function showSlide(index) {
+        images.forEach(img => img.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
+        
+        images[index].classList.add('active');
+        dots[index].classList.add('active');
+        currentIndex = index;
+    }
+    
+    if (images.length > 1) {
+        prevBtn.addEventListener('click', () => {
+            let newIndex = currentIndex - 1;
+            if (newIndex < 0) newIndex = images.length - 1;
+            showSlide(newIndex);
+        });
+        
+        nextBtn.addEventListener('click', () => {
+            let newIndex = currentIndex + 1;
+            if (newIndex >= images.length) newIndex = 0;
+            showSlide(newIndex);
+        });
+        
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => showSlide(index));
+        });
+        
+        // Navegación con teclado
+        document.addEventListener('keydown', function(e) {
+            if (!modal.classList.contains('active')) return;
+            
+            if (e.key === 'ArrowLeft') {
+                let newIndex = currentIndex - 1;
+                if (newIndex < 0) newIndex = images.length - 1;
+                showSlide(newIndex);
+            }
+            if (e.key === 'ArrowRight') {
+                let newIndex = currentIndex + 1;
+                if (newIndex >= images.length) newIndex = 0;
+                showSlide(newIndex);
+            }
+        });
+    }
+}
+
+function closeImageModal() {
+    const modal = document.getElementById('image-modal');
+    if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
 }
